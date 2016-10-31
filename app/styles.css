@@ -60,6 +60,7 @@ html, body {
     height : 24px;
 }
 .simple-slider {
+    width : 1000px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
