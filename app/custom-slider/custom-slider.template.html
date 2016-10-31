@@ -1,0 +1,35 @@
+<div>
+    <form class="slide-count-form">
+        <label>
+            Количество элементов в галерее:
+            <input ng-model="cslider.slideCount" type="text" />
+        </label>
+        <button type="submit" ng-click="cslider.redraw()">Перерисовать</button>
+    </form>
+    <div class="simple-slider" unselectable="on">
+        <div class="arrow">
+            <span ng-touchstart="cslider.touchstartLeftArrow()"
+                    ng-touchend="cslider.touchendLeftArrow()"
+                    ng-mousedown="cslider.mousedownLeftArrow()"
+                    ng-mouseup="cslider.mouseupLeftArrow()"
+                    ng-mouseleave="cslider.mouseleaveLeftArrow()" class="button">❰</span>
+        </div>
+        <div class="slider-list" msd-wheel="cslider.mouseWheel($event)" ng-style="cslider.getCurrentSliderBoxStyle()">
+            <div class="slider-list-inner" ng-style="cslider.getCurrentSliderStyle()">
+                <div class="slider-item" ng-repeat="slide in cslider.slides" ng-style="{
+                    'marginLeft' : '{{cslider.SLIDE_MARGIN}}px',
+                    'marginRight' : '{{cslider.SLIDE_MARGIN}}px',
+                    'width' : '{{slide.width}}px'
+                }">
+                </div>
+            </div>
+        </div>
+        <div class="arrow">
+            <span ng-touchstart="cslider.touchstartRightArrow()"
+                    ng-touchend="cslider.touchendRightArrow()"
+                    ng-mousedown="cslider.mousedownRightArrow()"
+                    ng-mouseup="cslider.mouseupRightArrow()"
+                    ng-mouseleave="cslider.mouseleaveRightArrow()" class="button">❱</span>
+        </div>
+    </div>
+</div>
