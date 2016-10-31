@@ -16844,7 +16844,7 @@ var customSlider =
 	                    cslider.moveDescriptor = setTimeout(nextMove, cslider.sliderTimeout);
 	                    $scope.$apply();
 	                }
-	                setTimeout(nextMove, 0);
+	                cslider.moveDescriptor = setTimeout(nextMove, 0);
 	            }
 
 	            this.startToMoveLeft = function () {
